@@ -3,31 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>http://www.engsner.com/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/page/projects/</loc>
+    <loc>http://www.engsner.com/page/projects/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/page/about/</loc>
+    <loc>http://www.engsner.com/page/about/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>http://www.engsner.com/categories/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/page/</loc>
+    <loc>http://www.engsner.com/page/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/series/</loc>
+    <loc>http://www.engsner.com/series/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>http://www.engsner.com/tags/</loc>
   </url>
   
 </urlset>

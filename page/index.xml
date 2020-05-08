@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Markus Engsner&#39;s Personal Site</title>
-    <link>http://example.org/page/</link>
+    <link>http://www.engsner.com/page/</link>
     <description>Recent content in Pages on Markus Engsner&#39;s Personal Site</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	<atom:link href="http://example.org/page/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.engsner.com/page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Projects</title>
-      <link>http://example.org/page/projects/</link>
+      <link>http://www.engsner.com/page/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/page/projects/</guid>
+      <guid>http://www.engsner.com/page/projects/</guid>
       <description>This is a gallery of all my projects. Click on them for more information!</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>http://example.org/page/about/</link>
+      <link>http://www.engsner.com/page/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/page/about/</guid>
+      <guid>http://www.engsner.com/page/about/</guid>
       <description>Welcome! My name is Markus Engsner, and this is my personal website. Here I showcase things I make, as well as write about things that I happen to find interesting.
 I spend most of my spare time programming, as well as building various electronic gadgets and robots. Currently I&amp;rsquo;m mostly doing various programming challenges. You can find some of the solutions on my Github (linked on the left). I have experience in the programming languages C++, C and Python.</description>
     </item>
