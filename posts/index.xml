@@ -3,12 +3,12 @@
   <channel>
     <title>My Blog on Markus Engsner</title>
     <link>http://engsner.com/posts/</link>
-    <description>Recent content in My Blog on Markus Engsner</description>
+    <description>Markus Engsner (My Blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 08 May 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://engsner.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://engsner.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,8 +17,14 @@
       <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
       
       <guid>http://engsner.com/posts/a-new-beginning/</guid>
-      <description>I bought this domain back in November last year, but I never ended up doing anything with it, due in part to me trying to make it from scratch with Django. However, I finally caved in and realized that it wouldn&amp;rsquo;t ever be finished that way. Therefore, I have decided to run it using the Hugo framework instead.
-The plan is to post the various projects I decide to tackle in my spare time, as well as whatever else comes to mind.</description>
+      <description>&lt;p&gt;I bought this domain back in November last year, but I never ended up doing anything with it,
+due in part to me trying to make it from scratch with Django.
+However, I finally caved in and realized that it wouldn&amp;rsquo;t ever be finished that way.
+Therefore, I have decided to run it using the &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; framework instead.&lt;/p&gt;
+&lt;p&gt;The plan is to post the various projects I decide to tackle in my spare time,
+as well as whatever else comes to mind.
+Only time will tell what actually ends up happening though!&lt;/p&gt;
+</description>
     </item>
     
   </channel>
