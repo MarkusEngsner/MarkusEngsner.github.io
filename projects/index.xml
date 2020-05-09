@@ -6,9 +6,31 @@
     <description>Markus Engsner (Projects)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 09 May 2020 10:43:32 +0200</lastBuildDate>
     
     <atom:link href="https://engsner.com/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Collinear Robot</title>
+      <link>https://engsner.com/projects/collinear-robot/</link>
+      <pubDate>Sat, 09 May 2020 10:43:32 +0200</pubDate>
+      
+      <guid>https://engsner.com/projects/collinear-robot/</guid>
+      <description>&lt;figure&gt;
+    &lt;img src=&#34;https://engsner.com/images/collinear-robot/collinear-robot.jpg&#34;
+         alt=&#34;The robot balancing on a wooden floor&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;The robot in action&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;As a capstone project (Gymnasiearbete), I was one in a group of three who built a balancing robot.
+I was responsible for writing the code. This entailed making an estimate of the current angle,
+interacting with a PID controller, communicating with the motor controllers,
+as well as allowing manual control through a Playstation 4 controller.&lt;/p&gt;
+&lt;p&gt;The code is available on &lt;a href=&#34;https://github.com/Sunkworks/Colinear-Balance-Bot&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
   </channel>
 </rss>
