@@ -3,31 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.engsner.com/</loc>
+    <loc>http://engsner.com/</loc>
+    <lastmod>2020-05-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.engsner.com/page/projects/</loc>
+    <loc>http://engsner.com/page/projects/</loc>
   </url>
   
   <url>
-    <loc>http://www.engsner.com/page/about/</loc>
+    <loc>http://engsner.com/page/about/</loc>
   </url>
   
   <url>
-    <loc>http://www.engsner.com/categories/</loc>
+    <loc>http://engsner.com/posts/a-new-beginning/</loc>
+    <lastmod>2020-05-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.engsner.com/page/</loc>
+    <loc>http://engsner.com/posts/</loc>
+    <lastmod>2020-05-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.engsner.com/series/</loc>
+    <loc>http://engsner.com/categories/</loc>
   </url>
   
   <url>
-    <loc>http://www.engsner.com/tags/</loc>
+    <loc>http://engsner.com/page/</loc>
+  </url>
+  
+  <url>
+    <loc>http://engsner.com/series/</loc>
+  </url>
+  
+  <url>
+    <loc>http://engsner.com/tags/</loc>
   </url>
   
 </urlset>

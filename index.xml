@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Markus Engsner&#39;s Personal Site</title>
-    <link>http://www.engsner.com/</link>
-    <description>Recent content in Home on Markus Engsner&#39;s Personal Site</description>
+    <title>Home on Markus Engsner</title>
+    <link>http://engsner.com/</link>
+    <description>Recent content in Home on Markus Engsner</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 May 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.engsner.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://engsner.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Projects</title>
-      <link>http://www.engsner.com/page/projects/</link>
+      <link>http://engsner.com/page/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://www.engsner.com/page/projects/</guid>
+      <guid>http://engsner.com/page/projects/</guid>
       <description>This is a gallery of all my projects. Click on them for more information!</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>http://www.engsner.com/page/about/</link>
+      <link>http://engsner.com/page/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://www.engsner.com/page/about/</guid>
+      <guid>http://engsner.com/page/about/</guid>
       <description>Welcome! My name is Markus Engsner, and this is my personal website. Here I showcase things I make, as well as write about things that I happen to find interesting.
 I spend most of my spare time programming, as well as building various electronic gadgets and robots. Currently I&amp;rsquo;m mostly doing various programming challenges. You can find some of the solutions on my Github (linked on the left). I have experience in the programming languages C++, C and Python.</description>
+    </item>
+    
+    <item>
+      <title>A new beginning</title>
+      <link>http://engsner.com/posts/a-new-beginning/</link>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://engsner.com/posts/a-new-beginning/</guid>
+      <description>I bought this domain back in November last year, but I never ended up doing anything with it, due in part to me trying to make it from scratch with Django. However, I finally caved in and realized that it wouldn&amp;rsquo;t ever be finished that way. Therefore, I have decided to run it using the Hugo framework instead.
+The plan is to post the various projects I decide to tackle in my spare time, as well as whatever else comes to mind.</description>
     </item>
     
   </channel>

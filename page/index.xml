@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pages on Markus Engsner&#39;s Personal Site</title>
-    <link>http://www.engsner.com/page/</link>
-    <description>Recent content in Pages on Markus Engsner&#39;s Personal Site</description>
+    <title>Pages on Markus Engsner</title>
+    <link>http://engsner.com/page/</link>
+    <description>Recent content in Pages on Markus Engsner</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
     
-	<atom:link href="http://www.engsner.com/page/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://engsner.com/page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Projects</title>
-      <link>http://www.engsner.com/page/projects/</link>
+      <link>http://engsner.com/page/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://www.engsner.com/page/projects/</guid>
+      <guid>http://engsner.com/page/projects/</guid>
       <description>This is a gallery of all my projects. Click on them for more information!</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>http://www.engsner.com/page/about/</link>
+      <link>http://engsner.com/page/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://www.engsner.com/page/about/</guid>
+      <guid>http://engsner.com/page/about/</guid>
       <description>Welcome! My name is Markus Engsner, and this is my personal website. Here I showcase things I make, as well as write about things that I happen to find interesting.
 I spend most of my spare time programming, as well as building various electronic gadgets and robots. Currently I&amp;rsquo;m mostly doing various programming challenges. You can find some of the solutions on my Github (linked on the left). I have experience in the programming languages C++, C and Python.</description>
     </item>
