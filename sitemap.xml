@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://engsner.com/</loc>
-    <lastmod>2020-05-09T10:43:32+02:00</lastmod>
+    <lastmod>2020-05-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -14,6 +14,31 @@
   
   <url>
     <loc>https://engsner.com/page/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://engsner.com/tags/audio/</loc>
+    <lastmod>2020-05-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engsner.com/tags/electronics/</loc>
+    <lastmod>2020-05-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engsner.com/posts/su-800-repair/</loc>
+    <lastmod>2020-05-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engsner.com/tags/repairs/</loc>
+    <lastmod>2020-05-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engsner.com/tags/</loc>
+    <lastmod>2020-05-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -41,10 +66,6 @@
   
   <url>
     <loc>https://engsner.com/series/</loc>
-  </url>
-  
-  <url>
-    <loc>https://engsner.com/tags/</loc>
   </url>
   
 </urlset>
