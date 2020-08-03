@@ -18,13 +18,13 @@
       
       <guid>https://engsner.com/posts/july-update/</guid>
       <description>&lt;p&gt;July is over, and I figured I would try to write a couple of words to summarize the month,
-as well as to try to set some goals for the coming month. This is Mostly done for my self,
+as well as to try to set some goals for the coming month. This is mostly done for myself,
 in an attempt to keep myself accountable.&lt;/p&gt;
 &lt;h2 id=&#34;embedded-development&#34;&gt;Embedded Development&lt;/h2&gt;
 &lt;p&gt;The main theme of the month has been embedded programming.
 Not just for work, but also in my spare time. Unfortunately, what I&amp;rsquo;ve found is that the more I do something for work,
-the less I want to do it for the rest of day.
-And since both work-programming and fun-programming has been on the same architechture (STM32!),
+the less I want to do it for the rest of the day.
+And since both work-programming and fun-programming has been on the same architecture (STM32!),
 I haven&amp;rsquo;t made that much progress on the &lt;a href=&#34;https://github.com/Sunkworks/rocket&#34;&gt;rocketry&lt;/a&gt;.
 It&amp;rsquo;s kind of fascinating actually. Even when doing embedded programming for two very different projects,
 it&amp;rsquo;s still very much the same. Read some data from SPI, process the data, figure out if an output MOSFET should be turned high or low&amp;hellip;&lt;/p&gt;
@@ -34,7 +34,7 @@ I have been writing that code in C++ instead, trying to make it as close to mode
 The issue I have ran into though, is that trying to make idiomatic C++ interoperate with underlying C code from the STM32 libraries is easier said than done.&lt;/p&gt;
 &lt;p&gt;Take for example enums. Idiomatic C++ means using &lt;code&gt;class enum&lt;/code&gt;, instead of the older C-style plain &lt;code&gt;enums&lt;/code&gt;.
 The reason for this being that they don&amp;rsquo;t degrade to ints as easily, giving off compiler errors instead.
-But the issues with this for me has been that when I try to call functions from the STM32 HAL,
+But the issue with this for me has been that when I try to call functions from the STM32 HAL,
 they expect a plain &lt;code&gt;uint8_t&lt;/code&gt;, and not a user-defined &lt;code&gt;enum&lt;/code&gt;.
 I didn&amp;rsquo;t come up with any solution that didn&amp;rsquo;t degrade the readability and conciseness of the code,
 so in the end I resorted to C-style &lt;code&gt;enums&lt;/code&gt; instead.&lt;/p&gt;
@@ -89,7 +89,7 @@ I was really impressed by the entire scala ecosystem, and how easy it is to add 
 However, when I was ready to finally package the program, the Java platform shocked me.
 30MB for such a small program!&lt;br&gt;
 Oh well, I guess you can&amp;rsquo;t have everything.&lt;/p&gt;
-&lt;p&gt;Having finished a first working version of the renamer, I decided to try to write a firefox extension too.
+&lt;p&gt;Having finished the first working version of the renamer, I decided to try to write a firefox extension too.
 The idea was to write it using scala.js, which would then transpile it to JavaScript. However, I had issues
 with getting bindings for some of the Firefox APIs, so I gave up on that effort.&lt;/p&gt;
 &lt;p&gt;Instead, I tried to write a game using &lt;a href=&#34;https://indigoengine.io/&#34;&gt;Indigo&lt;/a&gt;.

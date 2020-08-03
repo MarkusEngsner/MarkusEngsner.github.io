@@ -16,7 +16,7 @@
 <link rel="icon" type="image/x-icon" href="https://engsner.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://engsner.com/favicon.png">
 
-<link rel="stylesheet" href="https://engsner.com/css/light.css?rnd=1596485073" />
+<link rel="stylesheet" href="https://engsner.com/css/light.css?rnd=1596485505" />
 <style>
 
     [data-theme="dark"] {   
@@ -48,15 +48,15 @@
 
 </style>
 
-<link rel="stylesheet" href="https://engsner.com/css/style.css?rnd=1596485073" />
+<link rel="stylesheet" href="https://engsner.com/css/style.css?rnd=1596485505" />
 
 
 
 
 
 <meta property="og:title" content="July Update" />
-<meta property="og:description" content="July is over, and I figured I would try to write a couple of words to summarize the month, as well as to try to set some goals for the coming month. This is Mostly done for my self, in an attempt to keep myself accountable.
-Embedded Development The main theme of the month has been embedded programming. Not just for work, but also in my spare time. Unfortunately, what I&rsquo;ve found is that the more I do something for work, the less I want to do it for the rest of day." />
+<meta property="og:description" content="July is over, and I figured I would try to write a couple of words to summarize the month, as well as to try to set some goals for the coming month. This is mostly done for myself, in an attempt to keep myself accountable.
+Embedded Development The main theme of the month has been embedded programming. Not just for work, but also in my spare time. Unfortunately, what I&rsquo;ve found is that the more I do something for work, the less I want to do it for the rest of the day." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engsner.com/posts/july-update/" />
 <meta property="article:published_time" content="2020-08-03T20:18:20+02:00" />
@@ -64,8 +64,8 @@ Embedded Development The main theme of the month has been embedded programming. 
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="July Update"/>
-<meta name="twitter:description" content="July is over, and I figured I would try to write a couple of words to summarize the month, as well as to try to set some goals for the coming month. This is Mostly done for my self, in an attempt to keep myself accountable.
-Embedded Development The main theme of the month has been embedded programming. Not just for work, but also in my spare time. Unfortunately, what I&rsquo;ve found is that the more I do something for work, the less I want to do it for the rest of day."/>
+<meta name="twitter:description" content="July is over, and I figured I would try to write a couple of words to summarize the month, as well as to try to set some goals for the coming month. This is mostly done for myself, in an attempt to keep myself accountable.
+Embedded Development The main theme of the month has been embedded programming. Not just for work, but also in my spare time. Unfortunately, what I&rsquo;ve found is that the more I do something for work, the less I want to do it for the rest of the day."/>
 
 
 
@@ -109,13 +109,13 @@ Embedded Development The main theme of the month has been embedded programming. 
         </header>
         <div class="content">
             <p>July is over, and I figured I would try to write a couple of words to summarize the month,
-as well as to try to set some goals for the coming month. This is Mostly done for my self,
+as well as to try to set some goals for the coming month. This is mostly done for myself,
 in an attempt to keep myself accountable.</p>
 <h2 id="embedded-development">Embedded Development</h2>
 <p>The main theme of the month has been embedded programming.
 Not just for work, but also in my spare time. Unfortunately, what I&rsquo;ve found is that the more I do something for work,
-the less I want to do it for the rest of day.
-And since both work-programming and fun-programming has been on the same architechture (STM32!),
+the less I want to do it for the rest of the day.
+And since both work-programming and fun-programming has been on the same architecture (STM32!),
 I haven&rsquo;t made that much progress on the <a href="https://github.com/Sunkworks/rocket">rocketry</a>.
 It&rsquo;s kind of fascinating actually. Even when doing embedded programming for two very different projects,
 it&rsquo;s still very much the same. Read some data from SPI, process the data, figure out if an output MOSFET should be turned high or low&hellip;</p>
@@ -125,7 +125,7 @@ I have been writing that code in C++ instead, trying to make it as close to mode
 The issue I have ran into though, is that trying to make idiomatic C++ interoperate with underlying C code from the STM32 libraries is easier said than done.</p>
 <p>Take for example enums. Idiomatic C++ means using <code>class enum</code>, instead of the older C-style plain <code>enums</code>.
 The reason for this being that they don&rsquo;t degrade to ints as easily, giving off compiler errors instead.
-But the issues with this for me has been that when I try to call functions from the STM32 HAL,
+But the issue with this for me has been that when I try to call functions from the STM32 HAL,
 they expect a plain <code>uint8_t</code>, and not a user-defined <code>enum</code>.
 I didn&rsquo;t come up with any solution that didn&rsquo;t degrade the readability and conciseness of the code,
 so in the end I resorted to C-style <code>enums</code> instead.</p>
@@ -180,7 +180,7 @@ I was really impressed by the entire scala ecosystem, and how easy it is to add 
 However, when I was ready to finally package the program, the Java platform shocked me.
 30MB for such a small program!<br>
 Oh well, I guess you can&rsquo;t have everything.</p>
-<p>Having finished a first working version of the renamer, I decided to try to write a firefox extension too.
+<p>Having finished the first working version of the renamer, I decided to try to write a firefox extension too.
 The idea was to write it using scala.js, which would then transpile it to JavaScript. However, I had issues
 with getting bindings for some of the Firefox APIs, so I gave up on that effort.</p>
 <p>Instead, I tried to write a game using <a href="https://indigoengine.io/">Indigo</a>.
