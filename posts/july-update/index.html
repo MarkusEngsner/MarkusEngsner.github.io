@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+
+<html lang="en-us" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>July Update - Markus Engsner</title>
+<meta name="description" content="This is my personal website">
+
+<link rel="icon" type="image/x-icon" href="https://engsner.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://engsner.com/favicon.png">
+
+<link rel="stylesheet" href="https://engsner.com/css/light.css?rnd=1596485073" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://engsner.com/css/style.css?rnd=1596485073" />
+
+
+
+
+
+<meta property="og:title" content="July Update" />
+<meta property="og:description" content="July is over, and I figured I would try to write a couple of words to summarize the month, as well as to try to set some goals for the coming month. This is Mostly done for my self, in an attempt to keep myself accountable.
+Embedded Development The main theme of the month has been embedded programming. Not just for work, but also in my spare time. Unfortunately, what I&rsquo;ve found is that the more I do something for work, the less I want to do it for the rest of day." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engsner.com/posts/july-update/" />
+<meta property="article:published_time" content="2020-08-03T20:18:20+02:00" />
+<meta property="article:modified_time" content="2020-08-03T20:18:20+02:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="July Update"/>
+<meta name="twitter:description" content="July is over, and I figured I would try to write a couple of words to summarize the month, as well as to try to set some goals for the coming month. This is Mostly done for my self, in an attempt to keep myself accountable.
+Embedded Development The main theme of the month has been embedded programming. Not just for work, but also in my spare time. Unfortunately, what I&rsquo;ve found is that the more I do something for work, the less I want to do it for the rest of day."/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">Markus Engsner</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://engsner.com/" title="Home">Home</a>
+    
+    <a class="" href="https://engsner.com/projects/" title="Projects">Projects</a>
+    
+    <a class="" href="https://engsner.com/posts/" title="">Posts</a>
+    
+    <a class="" href="https://engsner.com/page/about/" title="About">About</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+    
+    <article class="post">
+        <header class="post-header">
+            <h1 class="post-title">July Update</h1>
+        </header>
+        <div class="content">
+            <p>July is over, and I figured I would try to write a couple of words to summarize the month,
+as well as to try to set some goals for the coming month. This is Mostly done for my self,
+in an attempt to keep myself accountable.</p>
+<h2 id="embedded-development">Embedded Development</h2>
+<p>The main theme of the month has been embedded programming.
+Not just for work, but also in my spare time. Unfortunately, what I&rsquo;ve found is that the more I do something for work,
+the less I want to do it for the rest of day.
+And since both work-programming and fun-programming has been on the same architechture (STM32!),
+I haven&rsquo;t made that much progress on the <a href="https://github.com/Sunkworks/rocket">rocketry</a>.
+It&rsquo;s kind of fascinating actually. Even when doing embedded programming for two very different projects,
+it&rsquo;s still very much the same. Read some data from SPI, process the data, figure out if an output MOSFET should be turned high or low&hellip;</p>
+<p>That being said, I have tried to mix it up a little.
+Since I&rsquo;m a lot more free in trying stuff out when not doing it for work,
+I have been writing that code in C++ instead, trying to make it as close to modern idiomatic C++ as possible.
+The issue I have ran into though, is that trying to make idiomatic C++ interoperate with underlying C code from the STM32 libraries is easier said than done.</p>
+<p>Take for example enums. Idiomatic C++ means using <code>class enum</code>, instead of the older C-style plain <code>enums</code>.
+The reason for this being that they don&rsquo;t degrade to ints as easily, giving off compiler errors instead.
+But the issues with this for me has been that when I try to call functions from the STM32 HAL,
+they expect a plain <code>uint8_t</code>, and not a user-defined <code>enum</code>.
+I didn&rsquo;t come up with any solution that didn&rsquo;t degrade the readability and conciseness of the code,
+so in the end I resorted to C-style <code>enums</code> instead.</p>
+<p>A big improvement with C++ though, is the usage of classes.
+I have found that a lot of embedded code is naturally object-oriented.
+As an example, let&rsquo;s say you are writing a driver for an IMU. Communication is done over SPI.
+Using the STM32 HAL, you have to pass a SPI handler to their write function. Since most STM32 MCUs have multiple SPI channels,
+you can&rsquo;t just make it a global. You also have to know which pin is used for chip select,
+which means you need another two variables if using the STM32 HAL.
+The solution to this in C is to pass a struct around:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ImuConfig</span> {
+  GPIO_TypeDef <span style="color:#f92672">*</span>NSS_GPIO;
+  <span style="color:#66d9ef">uint16_t</span> NSS_Pin;         <span style="color:#75715e">// Chip select pin
+</span><span style="color:#75715e"></span>  SPI_HandleTypeDef <span style="color:#f92672">*</span>hspi;  <span style="color:#75715e">// SPI handler
+</span><span style="color:#75715e"></span>};	
+
+<span style="color:#66d9ef">uint8_t</span> <span style="color:#a6e22e">getAcceleration</span>(<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ImuConfig</span> <span style="color:#f92672">*</span>imu_io) {
+  <span style="color:#75715e">// Do stuff
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">uint8_t</span> result <span style="color:#f92672">=</span> imuRead(imu_io, kAccelReg);
+  <span style="color:#75715e">// Do more stuff
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>This quickly gets tedious, especially if calling functions with a lot of other parameters.
+Using C++ instead, one can easily bake this into a class:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">IMU</span> {
+ <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  <span style="color:#66d9ef">uint8_t</span> getAcceleration(){
+    <span style="color:#75715e">// Do stuff
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">uint8_t</span> result <span style="color:#f92672">=</span> imuRead(MPU9250<span style="color:#f92672">::</span>kAccelReg);
+    <span style="color:#75715e">// Do more stuff
+</span><span style="color:#75715e"></span>  }
+
+ <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+  GPIO_TypeDef NSS_GPIO;
+  <span style="color:#66d9ef">uint16_t</span> NSS_Pin;         <span style="color:#75715e">// Chip select pin
+</span><span style="color:#75715e"></span>  SPI_HandleTypeDef <span style="color:#f92672">*</span>hspi;  <span style="color:#75715e">// SPI handler
+</span><span style="color:#75715e"></span>  imuRead(<span style="color:#66d9ef">uint8_t</span> reg);
+}
+</code></pre></div><p>With C++, it simply becomes a lot cleaner, especially when dealing with many instances of the same sensor or module.
+Another benefit of C++ is namespaces. Instead of cluttering the global namespaces with hundreds of registers for various devices,
+one can simply put them in different namespaces (see the <code>imuRead</code> call in the C++ code).</p>
+<p>The only thing I&rsquo;m a little worried about with my C++ code is using it with more C libraries.
+The HAL has worked out fine after ditching <code>class enum</code>, but apparently FreeRTOS is a different beast.
+I haven&rsquo;t gotten quite that far yet though&hellip;</p>
+<h2 id="scala-and-the-java-platform">Scala (and the Java Platform&hellip;)</h2>
+<p>After accidently stumbling upon a glowing recommendation of a Scala MOOC in a Hacker News thread,
+I decided to finally try to grok functional programming. The course in question is <em>Functional Programming Principles in Scala</em>,
+and is given by Martin Odersky (EPFL), the founder of Scala. Just this evening I finished week 4 of 6, and it&rsquo;s been really great so far.
+In addition to doing the programming assignments that are part of the course, I have also tried to come up with some other projects,
+to get more comfortable with the language. This led to the creation of <a href="https://github.com/MarkusEngsner/ArxivRenamer">ArxivRenamer</a>,
+a program that renames articles downloaded from arXiv to more readable names.
+I was really impressed by the entire scala ecosystem, and how easy it is to add dependencies.
+However, when I was ready to finally package the program, the Java platform shocked me.
+30MB for such a small program!<br>
+Oh well, I guess you can&rsquo;t have everything.</p>
+<p>Having finished a first working version of the renamer, I decided to try to write a firefox extension too.
+The idea was to write it using scala.js, which would then transpile it to JavaScript. However, I had issues
+with getting bindings for some of the Firefox APIs, so I gave up on that effort.</p>
+<p>Instead, I tried to write a game using <a href="https://indigoengine.io/">Indigo</a>.
+I haven&rsquo;t gotten very far yet, but it&rsquo;s been going okay.
+It has all the usual issues with using libraries that aren&rsquo;t very mature yet (breaking API updates, partial lack of documentation&hellip;),
+but overall it&rsquo;s been a pleasant experience.
+Since compiling is very fast, it&rsquo;s easy to just make some small changes and to iterate quickly on changes.</p>
+<h2 id="looking-forward-august">Looking forward: August</h2>
+<p>Scala and embedded sums up my month quite well.
+Now we get to the section on what I&rsquo;m planning to get done for during the next month.<br>
+My main focus at the moment is Scala. I want to finish the MOOC during this month,
+and continue to write more Scala code.
+My lack of creativity in writing games might lead to me running out of steam on that front,
+but I have some other ideas as well. Hopefully there will be a post involving music and <a href="https://en.wikipedia.org/wiki/Erd%C5%91s_number">Erdős number</a> in the coming weeks, so stay tuned!</p>
+<p>When I finish the Scala course, I&rsquo;m planning to continue my self-study in Computer Science.
+I haven&rsquo;t decided what topic I will try to learn next, but I have a couple of ideas in my head.
+First off, we have Computer Architecture. I&rsquo;m also considering doing the follow-up course on Scala from EPFL.
+That&rsquo;s not really as much Computer Science as it is programming though, so to Computer Architecture seems more likely at the moment.
+Having recently bought the classic book <em>Structure and Interpretation of Computer Programs</em>, I also want to work through that.
+But that too is more programming than Computer Science, so the same arguments goes for that.</p>
+<figure>
+    <img src="/images/monthly/sicp-696x1000.jpg"
+         alt="The classic." width="50%"/> <figcaption>
+            <p><em>The</em> classic.</p>
+        </figcaption>
+</figure>
+
+<p>Towards the end of month, I&rsquo;m also going to enrol in courses on logic and German at my local university.
+We will see how it goes, but I&rsquo;m looking forward to it!</p>
+<p>I have gotten out of the habit of reading recently, which is something I would like to get back into.
+I&rsquo;m hoping to finish <em>Die Wolke</em> and <em>Steppenwolf</em> this month (both in German), as a warm-up for the university course.</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2020-08-03</div>
+    
+    <div class="post-taxonomies">
+        
+            
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        <div class="copyright">
+            <p>© Markus Engsner, 2020<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+            </p>  
+        </div> 
+    </div>
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

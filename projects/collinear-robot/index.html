@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+
+
+<html lang="en-us" data-theme="">
 <head>
     
         
@@ -8,13 +10,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Collinear Robot  - Markus Engsner</title>
+<title>Collinear Robot - Markus Engsner</title>
 <meta name="description" content="This is my personal website">
 
 <link rel="icon" type="image/x-icon" href="https://engsner.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://engsner.com/favicon.png">
 
-<link rel="stylesheet" href="https://engsner.com/css/style.css?rnd=1590085729" />
+<link rel="stylesheet" href="https://engsner.com/css/light.css?rnd=1596485073" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://engsner.com/css/style.css?rnd=1596485073" />
+
+
 
 
 
@@ -34,26 +70,28 @@
 
 
 
+
+
     
 </head>
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
-    <a href="https://engsner.com/">Markus Engsner</a>
+                <h1 class="site-title">
+    <a href="/">Markus Engsner</a>
 </h1>
 <nav>
     
     
-    <a class="" href="/" title="Home">Home</a>
+    <a class="" href="https://engsner.com/" title="Home">Home</a>
     
-    <a class="" href="/projects/" title="Projects">Projects</a>
+    <a class="" href="https://engsner.com/projects/" title="Projects">Projects</a>
     
-    <a class="" href="/posts/" title="">Posts</a>
+    <a class="" href="https://engsner.com/posts/" title="">Posts</a>
     
-    <a class="" href="/page/about/" title="About">About</a>
+    <a class="" href="https://engsner.com/page/about/" title="About">About</a>
     
 </nav>
 
@@ -61,10 +99,11 @@
         </header>
         <main id="main" tabindex="-1"> 
             
-
+    
+    
     <article class="post">
-        <header>
-            <h1>Collinear Robot</h1>
+        <header class="post-header">
+            <h1 class="post-title">Collinear Robot</h1>
         </header>
         <div class="content">
             <figure>
@@ -81,28 +120,47 @@ as well as allowing manual control through a Playstation 4 controller.</p>
 <p>The code is available on <a href="https://github.com/Sunkworks/Colinear-Balance-Bot">Github</a>.</p>
 
         </div>
-        <div class="article-info">
+        
+
+
+<div class="post-info">
     
-        <div class="article-date">2020-05-09</div>
+        <div class="post-date">2020-05-09</div>
     
-    <div class="article-taxonomies">
+    <div class="post-taxonomies">
         
             
     </div>
 </div>
 
     </article>
+
+    
+
     
 
 
         </main>
-        <footer>
-            
-                <p>© Markus Engsner, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-</p>
-            
-        </footer>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        <div class="copyright">
+            <p>© Markus Engsner, 2020<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+            </p>  
+        </div> 
+    </div>
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

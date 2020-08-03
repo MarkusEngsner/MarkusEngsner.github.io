@@ -6,7 +6,7 @@
     <description>Markus Engsner (Home)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2020 20:18:20 +0200</lastBuildDate>
     
     <atom:link href="https://engsner.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -23,6 +23,119 @@ Here I showcase things I make, as well as write about things that I happen to fi
 Currently I&amp;rsquo;m mostly doing various programming challenges.
 You can find some of the solutions on my Github (linked on the left).
 I have experience in the programming languages C++, C and Python.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>July Update</title>
+      <link>https://engsner.com/posts/july-update/</link>
+      <pubDate>Mon, 03 Aug 2020 20:18:20 +0200</pubDate>
+      
+      <guid>https://engsner.com/posts/july-update/</guid>
+      <description>&lt;p&gt;July is over, and I figured I would try to write a couple of words to summarize the month,
+as well as to try to set some goals for the coming month. This is Mostly done for my self,
+in an attempt to keep myself accountable.&lt;/p&gt;
+&lt;h2 id=&#34;embedded-development&#34;&gt;Embedded Development&lt;/h2&gt;
+&lt;p&gt;The main theme of the month has been embedded programming.
+Not just for work, but also in my spare time. Unfortunately, what I&amp;rsquo;ve found is that the more I do something for work,
+the less I want to do it for the rest of day.
+And since both work-programming and fun-programming has been on the same architechture (STM32!),
+I haven&amp;rsquo;t made that much progress on the &lt;a href=&#34;https://github.com/Sunkworks/rocket&#34;&gt;rocketry&lt;/a&gt;.
+It&amp;rsquo;s kind of fascinating actually. Even when doing embedded programming for two very different projects,
+it&amp;rsquo;s still very much the same. Read some data from SPI, process the data, figure out if an output MOSFET should be turned high or low&amp;hellip;&lt;/p&gt;
+&lt;p&gt;That being said, I have tried to mix it up a little.
+Since I&amp;rsquo;m a lot more free in trying stuff out when not doing it for work,
+I have been writing that code in C++ instead, trying to make it as close to modern idiomatic C++ as possible.
+The issue I have ran into though, is that trying to make idiomatic C++ interoperate with underlying C code from the STM32 libraries is easier said than done.&lt;/p&gt;
+&lt;p&gt;Take for example enums. Idiomatic C++ means using &lt;code&gt;class enum&lt;/code&gt;, instead of the older C-style plain &lt;code&gt;enums&lt;/code&gt;.
+The reason for this being that they don&amp;rsquo;t degrade to ints as easily, giving off compiler errors instead.
+But the issues with this for me has been that when I try to call functions from the STM32 HAL,
+they expect a plain &lt;code&gt;uint8_t&lt;/code&gt;, and not a user-defined &lt;code&gt;enum&lt;/code&gt;.
+I didn&amp;rsquo;t come up with any solution that didn&amp;rsquo;t degrade the readability and conciseness of the code,
+so in the end I resorted to C-style &lt;code&gt;enums&lt;/code&gt; instead.&lt;/p&gt;
+&lt;p&gt;A big improvement with C++ though, is the usage of classes.
+I have found that a lot of embedded code is naturally object-oriented.
+As an example, let&amp;rsquo;s say you are writing a driver for an IMU. Communication is done over SPI.
+Using the STM32 HAL, you have to pass a SPI handler to their write function. Since most STM32 MCUs have multiple SPI channels,
+you can&amp;rsquo;t just make it a global. You also have to know which pin is used for chip select,
+which means you need another two variables if using the STM32 HAL.
+The solution to this in C is to pass a struct around:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ImuConfig&lt;/span&gt; {
+  GPIO_TypeDef &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;NSS_GPIO;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;uint16_t&lt;/span&gt; NSS_Pin;         &lt;span style=&#34;color:#75715e&#34;&gt;// Chip select pin
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  SPI_HandleTypeDef &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;hspi;  &lt;span style=&#34;color:#75715e&#34;&gt;// SPI handler
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;};	
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;uint8_t&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getAcceleration&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ImuConfig&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;imu_io) {
+  &lt;span style=&#34;color:#75715e&#34;&gt;// Do stuff
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;uint8_t&lt;/span&gt; result &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; imuRead(imu_io, kAccelReg);
+  &lt;span style=&#34;color:#75715e&#34;&gt;// Do more stuff
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This quickly gets tedious, especially if calling functions with a lot of other parameters.
+Using C++ instead, one can easily bake this into a class:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;IMU&lt;/span&gt; {
+ &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;uint8_t&lt;/span&gt; getAcceleration(){
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Do stuff
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;uint8_t&lt;/span&gt; result &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; imuRead(MPU9250&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;kAccelReg);
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Do more stuff
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  }
+
+ &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;
+  GPIO_TypeDef NSS_GPIO;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;uint16_t&lt;/span&gt; NSS_Pin;         &lt;span style=&#34;color:#75715e&#34;&gt;// Chip select pin
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  SPI_HandleTypeDef &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;hspi;  &lt;span style=&#34;color:#75715e&#34;&gt;// SPI handler
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  imuRead(&lt;span style=&#34;color:#66d9ef&#34;&gt;uint8_t&lt;/span&gt; reg);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With C++, it simply becomes a lot cleaner, especially when dealing with many instances of the same sensor or module.
+Another benefit of C++ is namespaces. Instead of cluttering the global namespaces with hundreds of registers for various devices,
+one can simply put them in different namespaces (see the &lt;code&gt;imuRead&lt;/code&gt; call in the C++ code).&lt;/p&gt;
+&lt;p&gt;The only thing I&amp;rsquo;m a little worried about with my C++ code is using it with more C libraries.
+The HAL has worked out fine after ditching &lt;code&gt;class enum&lt;/code&gt;, but apparently FreeRTOS is a different beast.
+I haven&amp;rsquo;t gotten quite that far yet though&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;scala-and-the-java-platform&#34;&gt;Scala (and the Java Platform&amp;hellip;)&lt;/h2&gt;
+&lt;p&gt;After accidently stumbling upon a glowing recommendation of a Scala MOOC in a Hacker News thread,
+I decided to finally try to grok functional programming. The course in question is &lt;em&gt;Functional Programming Principles in Scala&lt;/em&gt;,
+and is given by Martin Odersky (EPFL), the founder of Scala. Just this evening I finished week 4 of 6, and it&amp;rsquo;s been really great so far.
+In addition to doing the programming assignments that are part of the course, I have also tried to come up with some other projects,
+to get more comfortable with the language. This led to the creation of &lt;a href=&#34;https://github.com/MarkusEngsner/ArxivRenamer&#34;&gt;ArxivRenamer&lt;/a&gt;,
+a program that renames articles downloaded from arXiv to more readable names.
+I was really impressed by the entire scala ecosystem, and how easy it is to add dependencies.
+However, when I was ready to finally package the program, the Java platform shocked me.
+30MB for such a small program!&lt;br&gt;
+Oh well, I guess you can&amp;rsquo;t have everything.&lt;/p&gt;
+&lt;p&gt;Having finished a first working version of the renamer, I decided to try to write a firefox extension too.
+The idea was to write it using scala.js, which would then transpile it to JavaScript. However, I had issues
+with getting bindings for some of the Firefox APIs, so I gave up on that effort.&lt;/p&gt;
+&lt;p&gt;Instead, I tried to write a game using &lt;a href=&#34;https://indigoengine.io/&#34;&gt;Indigo&lt;/a&gt;.
+I haven&amp;rsquo;t gotten very far yet, but it&amp;rsquo;s been going okay.
+It has all the usual issues with using libraries that aren&amp;rsquo;t very mature yet (breaking API updates, partial lack of documentation&amp;hellip;),
+but overall it&amp;rsquo;s been a pleasant experience.
+Since compiling is very fast, it&amp;rsquo;s easy to just make some small changes and to iterate quickly on changes.&lt;/p&gt;
+&lt;h2 id=&#34;looking-forward-august&#34;&gt;Looking forward: August&lt;/h2&gt;
+&lt;p&gt;Scala and embedded sums up my month quite well.
+Now we get to the section on what I&amp;rsquo;m planning to get done for during the next month.&lt;br&gt;
+My main focus at the moment is Scala. I want to finish the MOOC during this month,
+and continue to write more Scala code.
+My lack of creativity in writing games might lead to me running out of steam on that front,
+but I have some other ideas as well. Hopefully there will be a post involving music and &lt;a href=&#34;https://en.wikipedia.org/wiki/Erd%C5%91s_number&#34;&gt;Erdős number&lt;/a&gt; in the coming weeks, so stay tuned!&lt;/p&gt;
+&lt;p&gt;When I finish the Scala course, I&amp;rsquo;m planning to continue my self-study in Computer Science.
+I haven&amp;rsquo;t decided what topic I will try to learn next, but I have a couple of ideas in my head.
+First off, we have Computer Architecture. I&amp;rsquo;m also considering doing the follow-up course on Scala from EPFL.
+That&amp;rsquo;s not really as much Computer Science as it is programming though, so to Computer Architecture seems more likely at the moment.
+Having recently bought the classic book &lt;em&gt;Structure and Interpretation of Computer Programs&lt;/em&gt;, I also want to work through that.
+But that too is more programming than Computer Science, so the same arguments goes for that.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://engsner.com/images/monthly/sicp-696x1000.jpg&#34;
+         alt=&#34;The classic.&#34; width=&#34;50%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;em&gt;The&lt;/em&gt; classic.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Towards the end of month, I&amp;rsquo;m also going to enrol in courses on logic and German at my local university.
+We will see how it goes, but I&amp;rsquo;m looking forward to it!&lt;/p&gt;
+&lt;p&gt;I have gotten out of the habit of reading recently, which is something I would like to get back into.
+I&amp;rsquo;m hoping to finish &lt;em&gt;Die Wolke&lt;/em&gt; and &lt;em&gt;Steppenwolf&lt;/em&gt; this month (both in German), as a warm-up for the university course.&lt;/p&gt;
 </description>
     </item>
     
