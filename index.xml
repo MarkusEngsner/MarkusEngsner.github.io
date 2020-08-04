@@ -33,7 +33,8 @@ I have experience in the programming languages C++, C and Python.&lt;/p&gt;
       
       <guid>https://engsner.com/posts/july-update/</guid>
       <description>&lt;p&gt;July is over, and I figured I would try to write a couple of words to summarize the month,
-as well as to try to set some goals for the coming month. This is mostly done for myself,
+as well as to try to set some goals for the coming month.&lt;/p&gt;
+&lt;p&gt;This is mostly done for myself,
 in an attempt to keep myself accountable.&lt;/p&gt;
 &lt;h2 id=&#34;embedded-development&#34;&gt;Embedded Development&lt;/h2&gt;
 &lt;p&gt;The main theme of the month has been embedded programming.
@@ -135,8 +136,7 @@ But that too is more programming than Computer Science, so the same arguments go
 &lt;p&gt;Towards the end of month, I&amp;rsquo;m also going to enrol in courses on logic and German at my local university.
 We will see how it goes, but I&amp;rsquo;m looking forward to it!&lt;/p&gt;
 &lt;p&gt;I have gotten out of the habit of reading recently, which is something I would like to get back into.
-I&amp;rsquo;m hoping to finish &lt;em&gt;Die Wolke&lt;/em&gt; and &lt;em&gt;Steppenwolf&lt;/em&gt; this month (both in German), as a warm-up for the university course.&lt;/p&gt;
-</description>
+I&amp;rsquo;m hoping to finish &lt;em&gt;Die Wolke&lt;/em&gt; and &lt;em&gt;Steppenwolf&lt;/em&gt; this month (both in German), as a warm-up for the university course.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -147,8 +147,8 @@ I&amp;rsquo;m hoping to finish &lt;em&gt;Die Wolke&lt;/em&gt; and &lt;em&gt;Step
       <guid>https://engsner.com/posts/su-800-repair/</guid>
       <description>&lt;p&gt;Back in February, I started repairing an old Technics amplifier we had lying around.
 While it worked for a short while after being turned on, the sound quickly dropped out.
-After some digging around, I found the service manual and schematic for it, and started troubleshooting.
-I removed the amplifier from it&amp;rsquo;s casing, and reassembled it in a more debug-friendly way on my workbench
+After some digging around, I found the service manual and schematic for it, and started troubleshooting.&lt;/p&gt;
+&lt;p&gt;I removed the amplifier from it&amp;rsquo;s casing, and reassembled it in a more debug-friendly way on my workbench
 (see picture).
 &lt;figure&gt;
     &lt;img src=&#34;https://engsner.com/images/su-800/amplifier.jpg&#34;
@@ -207,9 +207,7 @@ This time I was treated to some lovely music out of the connected speaker, and t
          alt=&#34;The amplifier powered on.&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;Up and running!&lt;/p&gt;
         &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-</description>
+&lt;/figure&gt;</description>
     </item>
     
     <item>
@@ -241,12 +239,11 @@ as well as allowing manual control through a Playstation 4 controller.&lt;/p&gt;
       <guid>https://engsner.com/posts/a-new-beginning/</guid>
       <description>&lt;p&gt;I bought this domain back in November last year, but I never ended up doing anything with it,
 due in part to me trying to make it from scratch with Django.
-However, I finally caved in and realized that it wouldn&amp;rsquo;t ever be finished that way.
-Therefore, I have decided to run it using the &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; framework instead.&lt;/p&gt;
+However, I finally caved in and realized that it wouldn&amp;rsquo;t ever be finished that way.&lt;/p&gt;
+&lt;p&gt;Therefore, I have decided to run it using the &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; framework instead.&lt;/p&gt;
 &lt;p&gt;The plan is to post the various projects I decide to tackle in my spare time,
 as well as whatever else comes to mind.
-Only time will tell what actually ends up happening though!&lt;/p&gt;
-</description>
+Only time will tell what actually ends up happening though!&lt;/p&gt;</description>
     </item>
     
   </channel>
